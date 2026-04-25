@@ -98,26 +98,6 @@ The assessment was conducted following the **OWASP Testing Guide v4.2** methodol
 
 ---
 
-## 🔧 Quick Remediation Reference
-
-```http
-# Add these headers to ALL HTTP responses:
-
-Content-Security-Policy: default-src 'self'; script-src 'self'; object-src 'none'; frame-ancestors 'none'
-Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Referrer-Policy: strict-origin-when-cross-origin
-
-# Fix session cookie:
-Set-Cookie: JSESSIONID=...; Path=/; Secure; HttpOnly; SameSite=Strict
-
-# Suppress server headers in Tomcat server.xml:
-<Connector server=" " />
-```
-
----
-
 ## 📁 Project Structure
 
 ```
